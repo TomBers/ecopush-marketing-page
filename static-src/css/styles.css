@@ -607,6 +607,21 @@ section {
   width: 15%;
 }
 
+.buy-button {
+  display: block;
+  margin: auto;
+  padding: 0.5rem 1rem;
+  border: none;
+  font-size: 1rem;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  background-color: #19c587;
+  color: white;
+  width: 30%;
+  text-decoration: none;
+}
+
+
 .cta {
   background: #0e6a49;
   border-radius: 3px;

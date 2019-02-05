@@ -1,11 +1,21 @@
 <!doctype html>
 <html>
     <head>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124575724-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-124575724-1');
+      </script>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- HTML Meta Tags -->
         <title>Ecopush</title>
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
         <meta name="description" content="">
 
         <!-- Google / Search Engine Tags -->
@@ -43,7 +53,7 @@
             <a href="#section-stats" class="js-btn" data-hover="stats">stats</a>
             <a href="#section-integrations" class="js-btn" data-hover="integration">integration</a>
             <a href="#section-how-it-works" class="js-btn" data-hover="How it works">How it works</a>
-            <a href="#section-pre-order" class="js-btn" data-hover="pre-order">pre-order</a>
+            <a href="https://ecopush.co/blog/product/ecopush-plug/" class="btn" data-hover="order">Order</a>
         </nav>
 
         <nav class="nav--mobile">
@@ -152,7 +162,7 @@
                 <div class="stats__block">
                     <div class="flex--horizontal">
                         <h5 class="stats__name">Carbon intensity</h5>
-                        <h4 class="font-heading stats__result">73%</h4>
+                        <h4 class="font-heading stats__result">gCO2 / kWh</h4>
                     </div>
                     <div class="stats">
                         <canvas id="stats-0" ></canvas>
@@ -162,7 +172,7 @@
                 <div class="stats__block">
                     <div class="flex--horizontal">
                         <h5 class="stats__name">Usage trend</h5>
-                        <h4 class="font-heading stats__result">avg.</h4>
+                        <h4 class="font-heading stats__result">kWh</h4>
                     </div>
                     <div class="stats">
                         <canvas id="stats-1" ></canvas>
@@ -172,7 +182,7 @@
                 <div class="stats__block">
                     <div class="flex--horizontal">
                         <h5 class="stats__name">Money saved</h5>
-                        <h4 class="font-heading stats__result">Saving</h4>
+                        <h4 class="font-heading stats__result">p</h4>
                     </div>
                     <div class="stats">
                         <canvas id="stats-2" ></canvas>
@@ -260,37 +270,14 @@
         <section id="pre-order" class="section--pre-order js-section">
           <form action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSe2pfepmeCFD12FV-uxSOffqLKeFkYwkls1y9twdhR7xF19Mw/formResponse" target="_self" method="POST" id="mG61Hd">
             <div class="section__title">
-                <h3 class="font-heading">Pre-order Ecopush</h3>
-                <p>Apply to join the Ecopush waiting list. Retail price £25 with free shipping in the UK.</p>
+                <h3 class="font-heading">Order Ecopush</h3>
+                <p>Ecopush is available to purchase via our online store. Retail price £25 with free shipping in the UK.</p>
                 <div class="form-group">
-                  <input type="email" class="input" jsname="YPqjbf" autocomplete="email" tabindex="0" aria-label="Your email" name="emailAddress" value="" required="" dir="auto" data-initial-dir="auto" data-initial-value="" aria-invalid="true" placeholder="Enter email">
-                    <button id="submit-form" class="input-button">Submit</button>
+                    <a href="https://ecopush.co/blog/product/ecopush-plug/" class="buy-button">Buy</a>
                 </div>
             </div>
             </form>
         </section>
-
-        <section class="section">
-            <div class="section__container">
-                <h4 class="title">Frequenty asked questions</h4>
-                <ol>
-                  <li>Can I continue using the energy provider I use now?</li>
-                  <li>Are the peaks on the energy grid in real time?</li>
-                  <li>Why is timing important when it comes to electricity use?</li>
-                  <li>Do I need to do anything to make use of the best times to use electricity?</li>
-                  <li>What if I need electricity now but it's not the right time on the network, can I still use electricity? How does that work, do I switch off the Ecopush? </li>
-                  <li>Can I see the difference between what I used to use and what I'm using now? </li>
-                  <li>Is there an app that I can see my energy use on?</li>
-                  <li>When will other energy providers be adopting the Ecopush?</li>
-                  <li>I unplug my chargers to save energy now, will I need to do this with Ecopush?</li>
-                  <li>I always leave my television on standby, can I still do this with Ecopush?</li>
-                  <li>Can I put my laundry in my washing machine and will the Ecopush then turn it on at the best time?</li>
-                  <li>Can I plug in an extension cord (you know, one of those plugs with 4 plugs) into the Ecopush? </li>
-                  <li>How many Ecopush plugs do I need? Which appliances would you recommend plugging in first for the best result?</li>
-                  <li>How much money do you estimate I will save with the Ecopush?</li>
-                  </ol
-            </div>
-          </section>
 
         <script type="text/javascript" src="static-src/js/stats.js"></script>
         <script src="static-src/js/app.js"></script>
