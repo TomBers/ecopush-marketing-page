@@ -631,7 +631,7 @@ section {
   outline: 0;
   width: 80%;
   max-width: 230px;
-  text-align: left;
+  text-align: center;
   cursor: pointer;
   transition: 0.2s;
   text-decoration: none;
