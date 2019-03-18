@@ -65,6 +65,22 @@ p {
   line-height: 1.6em;
 }
 
+.badge-container {
+  height: 70px;
+  line-height: 70px;
+}
+
+.apple-badge {
+  display: inline;
+  vertical-align: middle;
+  max-width: 150px;
+}
+.android-badge {
+  display: inline;
+  vertical-align: middle;
+  max-width: 175px;
+}
+
 nav {
   display: flex;
   justify-content: center;
@@ -630,7 +646,7 @@ section {
   padding: 0.45rem 0.6rem;
   outline: 0;
   width: 80%;
-  max-width: 230px;
+  max-width: 300px;
   text-align: center;
   cursor: pointer;
   transition: 0.2s;
@@ -779,6 +795,17 @@ section {
     display: block;
   }
 
+  .apple-badge {
+    display: inline;
+    vertical-align: middle;
+    max-width: 125px;
+  }
+  .android-badge {
+    display: inline;
+    vertical-align: middle;
+    max-width: 145px;
+  }
+
   .section--features,
 .points {
     margin: 3rem auto;
@@ -903,6 +930,17 @@ section {
 @media only screen and (max-width: 660px) {
   .snippets__cards {
     display: none;
+  }
+
+  .apple-badge {
+    display: inline;
+    vertical-align: middle;
+    max-width: 90px;
+  }
+  .android-badge {
+    display: inline;
+    vertical-align: middle;
+    max-width: 110px;
   }
 
   .section--summary .summary__lists {
