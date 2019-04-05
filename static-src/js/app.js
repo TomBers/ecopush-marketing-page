@@ -5,15 +5,15 @@ var navIcon = document.querySelector(".nav--icon");
 var btns = document.querySelectorAll(".js-btn");
 var mobilebtns = document.querySelectorAll(".js-mobile-btn");
 var sections = document.querySelectorAll(".js-section");
-var slider = tns({
-    container: ".slide__container",
-    arrowKeys: true,
-    controlsText: [
-        '<i class="fas fa-angle-left"></i>',
-        '<i class="fas fa-angle-right"></i>'
-    ],
-    nav: false
-});
+// var slider = tns({
+//     container: ".slide__container",
+//     arrowKeys: true,
+//     controlsText: [
+//         '<i class="fas fa-angle-left"></i>',
+//         '<i class="fas fa-angle-right"></i>'
+//     ],
+//     nav: false
+// });
 
 //in page scrolling
 function setActiveLink(event, buttons) {
