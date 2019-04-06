@@ -65,6 +65,21 @@ p {
   line-height: 1.6em;
 }
 
+.row {
+  display: flex; /* equal height of the children */
+  width: 100%;
+}
+
+.col {
+  flex: .7; /* additionally, equal width */
+  padding: 1em;
+}
+
+.col2 {
+  flex: .3; /* additionally, equal width */
+  padding: 1em;
+}
+
 .badge-container {
   height: 70px;
   line-height: 70px;

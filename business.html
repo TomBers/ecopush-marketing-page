@@ -75,16 +75,17 @@
 
 
         <div class="light-bg">
-            <section class="section--features scroll-to-reveal js-section">
-              <div class="container">
-                <div class="row">
-                <canvas id="myChart"></canvas>
-                <p>Choose your savings : </p>
-                  <input id="slider" type="range" min="1" max="5" value="2" onchange="changeSlider()">
+            <section>
+              <div class="row">
+                <div class="col">
+                  <canvas id="myChart"></canvas>
+                </div>
+                <div class="col2">
+                  <p>Your devices</p>
+                  <div id="sliderContainer"><div>
                   <p id="savings"></p>
-                </div>
-                </div>
-</div>
+               </div>
+        </div>
 
             </section>
 
@@ -120,25 +121,45 @@
         <script src="static-src/js/underscore-min.js"></script>
     </body>
     <script>
+    var devices = [{name: "Plug1", initialValue: "1"}, {name: "Plug2", initialValue: "2"}, {name: "Plug3", initialValue: "4"}]
       document.addEventListener("DOMContentLoaded", function() {
-          draw_graph(2);
+        var node = document.getElementById("sliderContainer")
+        var container = document.createElement("div");
+        _.map(devices, function(device) {
+
+          var header = document.createElement("H4");
+          header.appendChild(document.createTextNode(device.name))
+          container.appendChild(header);
+
+          var slider = document.createElement("INPUT");
+          slider.setAttribute("type", "range");
+          slider.setAttribute("id", device.name);
+          slider.setAttribute("class", "plugSlider");
+          slider.setAttribute("min", "1");
+          slider.setAttribute("max", "5");
+          slider.setAttribute("value", device.initialValue);
+
+          slider.setAttribute("onchange", "changeSlider()");
+
+          container.appendChild(slider)
+        })
+          node.appendChild(container);
+          draw_graph(_.map(devices, function(device){ return get_start_index(device.initialValue)}));
       });
 
-  function draw_graph(indx) {
+  function draw_graph(sliderVals) {
     var energy_data = [251,252,244,242,240,240,240,241,242,240,224,234,246,252,256,255,256,257,256,261,265,262,264,262,259,255,253,251,249,242,235,237,236,238,239,240,239,237,234,232,234,226,218,197,186,179,174,165];
-    var vals = calc_vals(energy_data, 4);
-    var charge_data = generate_charge_data(energy_data, indx, indx+4);
 
-    var total = listSum(charge_data);
-    document.getElementById("savings").innerHTML = "Total output " + total;
+    var charge_data = _.map(sliderVals, function(indx) { return generate_charge_data(energy_data, indx, indx+4); } )
+
+    var total = calculateTotal(charge_data);
+
+    document.getElementById("savings").innerHTML = "Total output " + total + " gCO2";
     var datasets = [{
       data: energy_data
-    },
-    {
-      data: charge_data,
-      fill: true
     }
   ]
+  _.map(charge_data, function(data) { datasets.push({data: data, fill: true}) })
 
     drawLineGraph('myChart', dayLabels(), datasets);
   }
@@ -155,9 +176,8 @@
   }
 
   function changeSlider() {
-    var slider = document.getElementById("slider").value;
-    var indx = get_start_index(slider);
-    draw_graph(indx);
+    var sliders = document.getElementsByClassName("plugSlider");
+    draw_graph(_.map(sliders, function(slider){ return get_start_index(slider.value)}));
   }
 
   function calc_vals(data, bucket) {
@@ -167,6 +187,11 @@
 
   function generate_charge_data(data, start_index, end_index) {
     return _.map(data, function(val, indx) { return indx >= start_index && indx <= end_index ? data[indx] : null })
+  }
+
+  function calculateTotal(data) {
+    var tmp = _.map(data, function(val) { return listSum(val)})
+    return listSum(tmp)
   }
 
   function listSum(list) {
