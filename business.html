@@ -1,0 +1,220 @@
+<!doctype html>
+<html>
+    <head>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124575724-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-124575724-1');
+      </script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- HTML Meta Tags -->
+        <title>Ecopush</title>
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+        <meta name="description" content="">
+
+        <!-- Google / Search Engine Tags -->
+        <meta itemprop="name" content="">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="">
+
+        <!-- Facebook Meta Tags -->
+        <meta property="og:url" content="/">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="">
+        <meta property="og:description" content="">
+        <meta property="og:image" content="">
+
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="">
+        <meta name="twitter:description" content="">
+        <meta name="twitter:image" content="">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Poppins" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.6.0/tiny-slider.css">
+        <link rel="stylesheet" href="static-src/css/styles.css">
+        <link rel="author" href="humans.txt">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.6.0/min/tiny-slider.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
+    </head>
+
+    <body>
+        <nav class="nav--desktop">
+          <a href="https://ecopush.co" class="btn" data-hover="home">Features</a>
+          <a href="https://ecopush.co/blog/" class="btn" data-hover="features">Blog</a>
+          <a href="https://ecopush.co/blog/product/ecopush-plug/" class="btn" data-hover="shop">Shop</a>
+          <a href="https://ecopush.co/blog/frequently-asked-questions/" class="btn" data-hover="How it works">FAQS</a>
+        </nav>
+
+        <nav class="nav--mobile">
+            <div class="nav--icon"><i class="fas fa-bars"></i></div>
+            <div class="mobile-list">
+                <div class="centered">
+                    <a href="https://ecopush.co" class="btn" data-hover="home">Features</a>
+                    <a href="https://ecopush.co/blog/" class="btn" data-hover="features">Blog</a>
+                    <a href="https://ecopush.co/blog/product/ecopush-plug/" class="btn" data-hover="shop">Shop</a>
+                    <a href="https://ecopush.co/blog/frequently-asked-questions/" class="btn" data-hover="How it works">FAQS</a>
+                </div>
+            </div>
+        </nav>
+
+        <section class="section--hero">
+            <div class="flex--horizontal">
+                <div class="flex_child--horizontal aligner"></div>
+                  <h4>Ecopush for Business</h4>
+            </div>
+        </section>
+
+
+        <div class="light-bg">
+            <section class="section--features scroll-to-reveal js-section">
+              <div class="container">
+                <div class="row">
+                <canvas id="myChart"></canvas>
+                <p>Choose your savings : </p>
+                  <input id="slider" type="range" min="1" max="5" value="2" onchange="changeSlider()">
+                  <p id="savings"></p>
+                </div>
+                </div>
+</div>
+
+            </section>
+
+            <section class="section--stats scroll-to-reveal js-section">
+
+            </section>
+
+            <section class="section--integrations js-section">
+                <div class="section__title">
+                    <h3 class="font-heading">Trusted by</h3>
+                </div>
+                <div class="flex--horizontal">
+                    <img src="https://octopus.energy/static/consumer/img/branding/logo-black.svg" alt="Octopus Energy" class="logo">
+                </div>
+                <br />
+                <p>Get your <strong>free</strong> Ecopush plug when you sign up to the <a href="https://ecopush.octopus.energy/" target="blank">Octopus Energy Agile Tariff</a></p>
+            </section>
+        </div>
+
+        <section class="section--how-it-works js-section">
+            <div class="section__container">
+                <h4 class="title">How it works</h4>
+            </div>
+        </section>
+
+        <section id="pre-order" class="section--pre-order js-section">
+            <div class="section__title">
+                <h3 class="font-heading">Contact us</h3>
+            </div>
+        </section>
+
+        <script src="static-src/js/app.js"></script>
+        <script src="static-src/js/underscore-min.js"></script>
+    </body>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          draw_graph(2);
+      });
+
+  function draw_graph(indx) {
+    var energy_data = [251,252,244,242,240,240,240,241,242,240,224,234,246,252,256,255,256,257,256,261,265,262,264,262,259,255,253,251,249,242,235,237,236,238,239,240,239,237,234,232,234,226,218,197,186,179,174,165];
+    var vals = calc_vals(energy_data, 4);
+    var charge_data = generate_charge_data(energy_data, indx, indx+4);
+
+    var total = listSum(charge_data);
+    document.getElementById("savings").innerHTML = "Total output " + total;
+    var datasets = [{
+      data: energy_data
+    },
+    {
+      data: charge_data,
+      fill: true
+    }
+  ]
+
+    drawLineGraph('myChart', dayLabels(), datasets);
+  }
+
+  function get_start_index(indx) {
+   switch(indx) {
+      case '1': return 20;
+      case '2': return 12;
+      case '3': return 8;
+      case '4': return 40;
+      case '5': return 44;
+      default: return 14;
+    }
+  }
+
+  function changeSlider() {
+    var slider = document.getElementById("slider").value;
+    var indx = get_start_index(slider);
+    draw_graph(indx);
+  }
+
+  function calc_vals(data, bucket) {
+    var bob = _.chunk(data,bucket);
+    return _.map(bob, listSum);
+  }
+
+  function generate_charge_data(data, start_index, end_index) {
+    return _.map(data, function(val, indx) { return indx >= start_index && indx <= end_index ? data[indx] : null })
+  }
+
+  function listSum(list) {
+    var r = _.reduce(list, function(memo, num){ return memo + num; }, 0);
+    return r;
+  }
+  function drawLineGraph(divID, labels, datasets, legend) {
+    var ctx = document.getElementById(divID).getContext('2d');
+    var chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: datasets
+        },
+        options: {
+        legend: {
+            display: legend,
+         }
+        }
+    });
+}
+      function dayLabels() {
+    return [
+          "00:00", "00:30",
+          "01:00", "01:30",
+          "02:00", "02:30",
+          "03:00", "03:30",
+          "04:00", "04:30",
+          "05:00", "05:30",
+          "06:00", "06:30",
+          "07:00", "07:30",
+          "08:00", "08:30",
+          "09:00", "09:30",
+          "10:00", "10:30",
+          "11:00", "11:30",
+          "12:00", "12:30",
+          "13:00", "13:30",
+          "14:00", "14:30",
+          "15:00", "15:30",
+          "16:00", "16:30",
+          "17:00", "17:30",
+          "18:00", "18:30",
+          "19:00", "19:30",
+          "20:00", "20:30",
+          "21:00", "21:30",
+          "22:00", "22:30",
+          "23:00", "23:30",
+        ];
+}
+    </script>
+</html>
