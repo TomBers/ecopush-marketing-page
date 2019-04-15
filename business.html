@@ -43,7 +43,6 @@
         <link rel="author" href="humans.txt">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.6.0/min/tiny-slider.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
     </head>
 
     <body>
@@ -81,10 +80,12 @@
                   <canvas id="myChart"></canvas>
                 </div>
                 <div class="col2">
+                  <input type="radio" name="series" value="price" checked onclick="changeSeries('price')">Best for price <br>
+                  <input type="radio" name="series" value="carbon" onclick="changeSeries('carbon')">Best for CO2
                   <p>Your devices</p>
                   <div id="sliderContainer"><div>
                   <p id="savings"></p>
-                  <p><- Less savings More savings -></p> 
+                  <p><- Less savings More savings -></p>
                </div>
         </div>
 
@@ -118,14 +119,16 @@
             </div>
         </section>
 
-        <script src="static-src/js/app.js"></script>
+
         <script src="static-src/js/underscore-min.js"></script>
     </body>
     <script>
-    var devices = [{name: "Plug1", initialValue: "1"}, {name: "Plug2", initialValue: "2"}, {name: "Plug3", initialValue: "4"}]
+    var devices = [{name: "Plug1", initialValue: "1"}, {name: "Plug2", initialValue: "2"}, {name: "Plug3", initialValue: "3"}]
+    var optimiseFor = "price";
       document.addEventListener("DOMContentLoaded", function() {
         var node = document.getElementById("sliderContainer")
         var container = document.createElement("div");
+        container.setAttribute("class", "range");
         _.map(devices, function(device) {
 
           var header = document.createElement("H4");
@@ -137,27 +140,34 @@
           slider.setAttribute("id", device.name);
           slider.setAttribute("class", "plugSlider");
           slider.setAttribute("min", "1");
-          slider.setAttribute("max", "5");
+          slider.setAttribute("max", "3");
           slider.setAttribute("value", device.initialValue);
 
           slider.setAttribute("onchange", "changeSlider()");
 
-          container.appendChild(slider)
+          container.appendChild(slider);
+
+          var labels = document.createElement("UL");
+          labels.setAttribute("class", "range");
         })
           node.appendChild(container);
           draw_graph(_.map(devices, function(device){ return get_start_index(device.initialValue)}));
       });
 
   function draw_graph(sliderVals) {
-    var energy_data = [251,252,244,242,240,240,240,241,242,240,224,234,246,252,256,255,256,257,256,261,265,262,264,262,259,255,253,251,249,242,235,237,236,238,239,240,239,237,234,232,234,226,218,197,186,179,174,165];
+    var emissions = [251,252,244,242,240,240,240,241,242,240,224,234,246,252,256,255,256,257,256,261,265,262,264,262,259,255,253,251,249,242,235,237,236,238,239,240,239,237,234,232,234,226,218,197,186,179,174,165];
+    var price = [6.2, 6.2, 6.2, 6.2, 5.76, 5.76, 5.62, 5.62, 6.42, 6.5, 7.2, 6.88, 7.32, 7.34, 9.4, 9.4, 9.2, 9.22, 7.74, 7.74, 7.23, 7.24, 7.31, 7.31, 6.49, 6.48, 6.4, 6.4, 6.4, 6.4, 19.54, 21.14, 23.58, 23.58, 22.95, 23, 11.3, 11.3, 8.95, 8.83, 8.4, 8, 7.3, 7.1, 7, 7.09, 7.12, 6.9];
 
-    var charge_data = _.map(sliderVals, function(indx) { return generate_charge_data(energy_data, indx, indx+4); } )
+
+    var series = optimiseFor == 'price' ? price : emissions;
+
+    var charge_data = _.map(sliderVals, function(indx) { return generate_charge_data(series, indx, indx+4); } )
 
     var total = calculateTotal(charge_data);
 
-    document.getElementById("savings").innerHTML = "Total output " + total + " gCO2";
+    document.getElementById("savings").innerHTML = total;
     var datasets = [{
-      data: energy_data
+      data: series
     }
   ]
   _.map(charge_data, function(data) { datasets.push({data: data, fill: true}) })
@@ -166,19 +176,32 @@
   }
 
   function get_start_index(indx) {
-   switch(indx) {
-      case '1': return 20;
-      case '2': return 12;
-      case '3': return 8;
-      case '4': return 40;
-      case '5': return 44;
-      default: return 14;
+    if (optimiseFor == 'price') {
+      switch(indx) {
+         case '1': return 3;
+         case '2': return 14;
+         case '3': return 31;
+         default: return 20;
+       }
+    } else {
+      switch(indx) {
+         case '1': return 43;
+         case '2': return 6;
+         case '3': return 19;
+         default: return 14;
+       }
     }
+
   }
 
   function changeSlider() {
     var sliders = document.getElementsByClassName("plugSlider");
     draw_graph(_.map(sliders, function(slider){ return get_start_index(slider.value)}));
+  }
+
+  function changeSeries(new_series) {
+    optimiseFor = new_series;
+    changeSlider();
   }
 
   function calc_vals(data, bucket) {
@@ -191,8 +214,12 @@
   }
 
   function calculateTotal(data) {
+    var power = 5.8;
     var tmp = _.map(data, function(val) { return listSum(val)})
-    return listSum(tmp)
+    var total = Math.floor(listSum(tmp) * power)
+    var txt = "Total output " + total + " "
+    var units = optimiseFor == 'price' ? "p" : "gCO2"
+    return txt + units
   }
 
   function listSum(list) {
