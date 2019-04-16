@@ -65,18 +65,28 @@ p {
   line-height: 1.6em;
 }
 
+.business-point {
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.savings {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
 .row {
   display: flex; /* equal height of the children */
   width: 100%;
 }
 
 .col {
-  flex: .7; /* additionally, equal width */
+  flex: .8; /* additionally, equal width */
   padding: 1em;
 }
 
 .col2 {
-  flex: .3; /* additionally, equal width */
+  flex: .2; /* additionally, equal width */
   padding: 1em;
 }
 
@@ -1013,6 +1023,21 @@ section {
   .form-group {
     max-width: none;
     width: auto;
+  }
+  .row {
+    display: inline-block;
+  }
+  .col {
+    flex: 1; /* additionally, equal width */
+    padding: 0em;
+  }
+
+  .col2 {
+    flex: 1; /* additionally, equal width */
+    padding: 0em;
+  }
+  input[type="range"] {
+    width: 100%;
   }
 }
 
