@@ -82,7 +82,8 @@
               <div class="business-point">
                 <h3>Why?</h3>
                 <p>You can spend less money on your energy bills and at the same time reduce CO2 emission.</p>
-                <p>Simply, there are good times and bad times to use energy (see graph below).  We can help lower emissions and costs from batteries or heating systems by intelligently choosing when to turn on and off.</p>
+                <p>Simply, there are good times and bad times to use energy (see graph below).</p>
+                <p>We can help lower emissions and costs from batteries or heating systems by intelligently choosing when to turn on and off.</p>
               </div>
               <div class="business-point">
                 <h3>How?</h3>
@@ -92,6 +93,9 @@
                   <li>Analysis of cost / benefit of any potential changes</li>
                   <li>Automatically roll out agreed plan</li>
                 </ol>
+                <p>We combine knowledge of grid conditions (price and emissions) with a fully programmable smart plug.  Allowing you to monitor and control your devices on a per plug basis.</p>
+                <br>
+                <p>Choose exactly how much you want to save without effecting your business.</p>
               </div>
 
               <div class="business-point">
@@ -171,7 +175,8 @@
 
         })
         var label = document.createElement("p");
-        label.appendChild(document.createTextNode("Max | Med | Min savings"))
+        label.setAttribute("class", "savingsLabel")
+        label.appendChild(document.createTextNode("Max | Med | Min"))
         container.appendChild(label);
 
           draw_graph(_.map(devices, function(device){ return get_start_index(device.initialValue)}));
@@ -277,7 +282,7 @@
         },
         options: {
           scales: {
-            yAxes: [{scaleLabel: {display: true, labelString: "BOB"}}]
+            yAxes: [{scaleLabel: {display: true, labelString: optimiseFor == 'price' ? "p / kWh" : "gCO2 / kWh"}}]
           }
         },
     });

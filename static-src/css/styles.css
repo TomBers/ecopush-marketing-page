@@ -1039,6 +1039,10 @@ section {
   input[type="range"] {
     width: 100%;
   }
+  .savingsLabel {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
