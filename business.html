@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+    <head>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124575724-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-124575724-1');
+      </script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- HTML Meta Tags -->
+        <title>Ecopush</title>
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+        <meta itemprop="description" content="Carbon saving plug">
+        <meta name="keywords" content="Carbon, Green, smart home, smart devices, green plug, sustainability, Carbon reducing plug, Carbon saver plug, Reduce appliance carbon, Household carbon emissions">
+        
+
+        <!-- Google / Search Engine Tags -->
+        <meta itemprop="name" content="">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="">
+
+        <!-- Facebook Meta Tags -->
+        <meta property="og:url" content="/">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="">
+        <meta property="og:description" content="">
+        <meta property="og:image" content="">
+
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="">
+        <meta name="twitter:description" content="">
+        <meta name="twitter:image" content="">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Poppins" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.6.0/tiny-slider.css">
+        <link rel="stylesheet" href="static-src/css/styles.css">
+        <link rel="author" href="humans.txt">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.6.0/min/tiny-slider.js"></script>
+    </head>
+
+    <body>
+        <nav class="nav--desktop">
+          <a href="https://ecopush.co" class="btn" data-hover="home">Features</a>
+          <a href="https://ecopush.co/business.html" class="btn" data-hover="business">For Business</a>
+          <a href="https://ecopush.co/blog/" class="btn" data-hover="features">Blog</a>
+          <a href="https://ecopush.co/blog/product/ecopush-plug/" class="btn" data-hover="shop">Shop</a>
+          <a href="https://ecopush.co/blog/frequently-asked-questions/" class="btn" data-hover="How it works">FAQS</a>
+        </nav>
+
+        <nav class="nav--mobile">
+            <div class="nav--icon"><i class="fas fa-bars"></i></div>
+            <div class="mobile-list">
+                <div class="centered">
+                    <a href="https://ecopush.co" class="btn" data-hover="home">Features</a>
+                    <a href="https://ecopush.co/business.html" class="btn" data-hover="business">For Business</a>
+                    <a href="https://ecopush.co/blog/" class="btn" data-hover="features">Blog</a>
+                    <a href="https://ecopush.co/blog/product/ecopush-plug/" class="btn" data-hover="shop">Shop</a>
+                    <a href="https://ecopush.co/blog/frequently-asked-questions/" class="btn" data-hover="How it works">FAQS</a>
+                </div>
+            </div>
+        </nav>
+
+        <section class="section--hero">
+            <div class="flex--horizontal">
+                <div class="flex_child--horizontal aligner"></div>
+                  <h4>Ecopush for Business</h4>
+            </div>
+        </section>
+
+
+        <div class="light-bg">
+            <section>
+              <div class="business-point">
+                <h3>What?</h3>
+                <p>There is an opportunity to save your company money and lower carbon emisssions without expensive new equipment or intrusive changes to your business.  In fact, you will not even notice it is happening.</p>
+              </div>
+              <div class="business-point">
+                <h3>Why?</h3>
+                <p>You can spend less money on your energy bills and at the same time reduce CO2 emission.</p>
+                <p>Simply, there are good times and bad times to use energy (see graph below).</p>
+                <p>We can help lower emissions and costs from batteries or heating systems by intelligently choosing when to turn on and off.</p>
+              </div>
+              <div class="business-point">
+                <h3>How?</h3>
+                <p>We provide a 3-step approach to saving you money.</p>
+                <ol>
+                  <li>Identify and quantify sources of savings</li>
+                  <li>Analysis of cost / benefit of any potential changes</li>
+                  <li>Automatically roll out agreed plan</li>
+                </ol>
+                <p>We combine knowledge of grid conditions (price and emissions) with a fully programmable smart plug.  Allowing monitoring, control and automated scheduling on a per device basis.</p>
+                <br>
+                <p>Choose exactly how much you want to save without effecting your business.</p>
+              </div>
+
+              <div class="business-point">
+                <h3>See savings on real data</h3>
+                <p id="savings" class="savings"></p>
+                <div class="row">
+                  <div class="col">
+                    <canvas id="myChart"></canvas>
+                  </div>
+                  <div class="col2">
+                  <input type="radio" name="series" value="price" checked onclick="changeSeries('price')">Best for price <br>
+                  <input type="radio" name="series" value="carbon" onclick="changeSeries('carbon')">Best for CO2
+                  <div id="sliderContainer"><div>
+                </div>
+              </div>
+
+
+        </div>
+
+
+            </section>
+
+
+            <section class="section--integrations js-section">
+                <div class="section__title">
+                    <h3 class="font-heading">Trusted by</h3>
+                </div>
+                <div class="flex--horizontal">
+                    <img src="https://octopus.energy/static/consumer/img/branding/logo-black.svg" alt="Octopus Energy" class="logo">
+                </div>
+                <br />
+                <p>Get your <strong>free</strong> Ecopush plug when you sign up to the <a href="https://ecopush.octopus.energy/" target="blank">Octopus Energy Agile Tariff</a></p>
+            </section>
+        </div>
+
+        <section class="section--how-it-works js-section">
+            <div class="section__container">
+                <h4 class="title">How it works</h4>
+                <iframe width="75%" style="display:block; margin: auto; min-height: 457px;" src="https://www.youtube.com/embed/rf63K1wWbK0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section id="pre-order" class="section--pre-order js-section">
+            <div class="section__title">
+                <h3 class="font-heading">Contact us</h3>
+                <a href="mailto:info@ecopush.co">info@ecopush.co</a>
+            </div>
+        </section>
+
+        <script src="static-src/js/app.js"></script>
+        <script src="static-src/js/underscore-min.js"></script>
+    </body>
+    <script>
+    var devices = [{name: "Plug1", initialValue: "1"}, {name: "Plug2", initialValue: "2"}, {name: "Plug3", initialValue: "3"}]
+    var optimiseFor = "price";
+      document.addEventListener("DOMContentLoaded", function() {
+        loadDevices(devices);
+      });
+
+
+    </script>
+</html>

@@ -37,6 +37,12 @@ h5 {
   font-family: "Open Sans", sans-serif;
 }
 
+.amazon {
+  margin-top: 10px;
+  width: 137px;
+  height: 28px;
+}
+
 html,
 body {
   margin: 0;
@@ -63,6 +69,31 @@ p {
   margin: 0;
   font-size: 0.9em;
   line-height: 1.6em;
+}
+
+.business-point {
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.savings {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.row {
+  display: flex; /* equal height of the children */
+  width: 100%;
+}
+
+.col {
+  flex: .8; /* additionally, equal width */
+  padding: 1em;
+}
+
+.col2 {
+  flex: .2; /* additionally, equal width */
+  padding: 1em;
 }
 
 .badge-container {
@@ -998,6 +1029,25 @@ section {
   .form-group {
     max-width: none;
     width: auto;
+  }
+  .row {
+    display: inline-block;
+  }
+  .col {
+    flex: 1; /* additionally, equal width */
+    padding: 0em;
+  }
+
+  .col2 {
+    flex: 1; /* additionally, equal width */
+    padding: 0em;
+  }
+  input[type="range"] {
+    width: 100%;
+  }
+  .savingsLabel {
+    width: 100%;
+    text-align: center;
   }
 }
 
