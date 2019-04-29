@@ -37,6 +37,12 @@ h5 {
   font-family: "Open Sans", sans-serif;
 }
 
+.amazon {
+  margin-top: 10px;
+  width: 137px;
+  height: 28px;
+}
+
 html,
 body {
   margin: 0;

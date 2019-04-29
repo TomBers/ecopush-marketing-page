@@ -20,7 +20,8 @@
 
         <!-- Google / Search Engine Tags -->
         <meta itemprop="name" content="">
-        <meta itemprop="description" content="">
+        <meta itemprop="description" content="Carbon saving plug">
+        <meta name="keywords" content="Carbon, Green, smart home, smart devices, green plug, sustainability, Carbon reducing plug, Carbon saver plug, Reduce appliance carbon, Household carbon emissions">
         <meta itemprop="image" content="">
 
         <!-- Facebook Meta Tags -->
@@ -49,6 +50,7 @@
     <body>
         <nav class="nav--desktop">
           <a href="https://ecopush.co" class="btn" data-hover="home">Features</a>
+          <a href="https://ecopush.co/business.html" class="btn" data-hover="business">For Business</a>
           <a href="https://ecopush.co/blog/" class="btn" data-hover="features">Blog</a>
           <a href="https://ecopush.co/blog/product/ecopush-plug/" class="btn" data-hover="shop">Shop</a>
           <a href="https://ecopush.co/blog/frequently-asked-questions/" class="btn" data-hover="How it works">FAQS</a>
@@ -59,8 +61,9 @@
             <div class="mobile-list">
                 <div class="centered">
                     <a href="https://ecopush.co" class="btn" data-hover="home">Features</a>
+                    <a href="https://ecopush.co/business.html" class="btn" data-hover="business">For Business</a>
                     <a href="https://ecopush.co/blog/" class="btn" data-hover="features">Blog</a>
-                    <a href="https://ecopush.co/blog/product/ecopush-plug/" class="btn" data-hover="shop">Shop</a>                    
+                    <a href="https://ecopush.co/blog/product/ecopush-plug/" class="btn" data-hover="shop">Shop</a>
                     <a href="https://ecopush.co/blog/frequently-asked-questions/" class="btn" data-hover="How it works">FAQS</a>
                 </div>
             </div>
@@ -70,12 +73,13 @@
             <div class="flex--horizontal">
                 <div class="flex_child--horizontal aligner">
                     <img src="static-src/images/logo.png" alt="Ecopush logo">
-                    <h4>WORLD’S FIRST ECO PLUG</h4>
+                    <h4>WORLD’S FIRST CO2 SAVING PLUG</h4>
                     <p>Reduce carbon emissions and save money at the same time.</p>
                     <p><sub>(It also does everything you would expect from a smart plug)</sub></p>
                     <a href="https://ecopush.co/blog/product/ecopush-plug/" class="cta">
-                        <strong>Order now</strong><br>
+                        <strong>Buy now</strong><br>
                     </a>
+                    <a href="https://www.amazon.co.uk/Ecopush-Worlds-First-Ecoplug/dp/B07QH5N7WF/" target="_blank"><img class="amazon" src="static-src/images/amazon.gif"></a>
                     <div class="badge-container">
                       <a href='https://itunes.apple.com/gb/app/ecopush/id1439170516?mt=8' target="_blank"><img class="apple-badge" alt='Get it on the App store' src='static-src/images/app_store.png' /></a>
                       <a href='https://play.google.com/store/apps/details?id=com.ecopush.smart&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' target="_blank"><img class="android-badge" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
@@ -113,8 +117,13 @@
                     </div>
                 </div>
                 <div class="flex_child--vertical flex--horizontal aligner fadeIn">
-                    <p>Ecopush will ensure that you’re helping to reduce demand on the energy network and ensure that your carbon output is as low as possible. <br/><br/>Charge your batteries by letting Ecopush decide when the best time is to switch it on. You can allow it to be fully automated letting Ecopush decide to switch devices on when it is cheaper and eco friendly.</p>
-                    <h2 class="font-heading aligner_item--bottom">Smart Energy Management</h2>
+                    <p>Put simply there are good times to use energy and bad times.
+                    <br /><br />
+                    Using energy at the wrong time can cost you money and result in far more CO2 emissions.
+                    <br /><br />
+                    Let Ecopush find the best time to save money and the environment.
+                  </p>
+                    <h2 class="font-heading aligner_item--bottom">Smart Energy Savings</h2>
                 </div>
             </div>
         </section>
@@ -129,7 +138,7 @@
                     <div class="features__left aligner flex--vertical">
                         <div class="flex--vertical fadeInLeft fadeInLeft--0">
                             <object type="image/svg+xml" data="static-src/images/features-circle.svg"></object>
-                            <p>Schedule the Ecopush plug to automatically power electronics on and off when the Electric Grid is serving the most polluted energy from coal-fired power plants</p>
+                            <p>Automatically charge your devices when prices or emissions are lowest.</p>
                         </div>
 
                         <div class="flex--vertical fadeInLeft fadeInLeft--1">
@@ -143,12 +152,12 @@
                     <div class="features__right aligner flex--vertical">
                         <div class="flex--vertical fadeInRight fadeInRight--0">
                             <object type="image/svg+xml" data="static-src/images/features-circle.svg"></object>
-                            <p>The Ecopush plug has all the features found in the most advanced smart plugs in the market: remote monitoring, switching &amp; scheduling</p>
+                            <p>All the features found in the most advanced smart plugs in the market: remote monitoring, switching &amp; scheduling</p>
                         </div>
 
                         <div class="flex--vertical fadeInRight fadeInRight--1">
                             <object type="image/svg+xml" data="static-src/images/features-circle.svg"></object>
-                            <p>Ecopush comes with a built in energy monitor, meaning you can see exactly when you used electricity and how much.</p>
+                            <p>Built in energy monitor, meaning you can see exactly when you used electricity and how much.</p>
                         </div>
                     </div>
                 </div>
@@ -189,6 +198,22 @@
                     <div class="stats">
                         <canvas id="stats-2" ></canvas>
                     </div>
+                </div>
+                <div class="section__title">
+                    <h3 class="font-heading">SEE SAVINGS ON REAL DATA</h3>
+                    <p>Interact with the graph below to see the potential for savings by simple shift of energy use.  Drag the sliders to the savings you want.</p>
+                </div>
+                <div class="business-point">
+                  <p id="savings" class="savings"></p>
+                  <div class="row">
+                    <div class="col">
+                      <canvas id="myChart"></canvas>
+                    </div>
+                    <div class="col2">
+                    <input type="radio" name="series" value="price" checked onclick="changeSeries('price')">Best for price <br>
+                    <input type="radio" name="series" value="carbon" onclick="changeSeries('carbon')">Best for CO2
+                    <div id="sliderContainer"><div>
+                  </div>
                 </div>
 <!--
                 <div class="stats__block">
@@ -252,6 +277,16 @@
         </section>
 
         <script type="text/javascript" src="static-src/js/stats.js"></script>
+        <script src="static-src/js/underscore-min.js"></script>
         <script src="static-src/js/app.js"></script>
     </body>
+    <script>
+    var devices = [{name: "Plug1", initialValue: "1"}, {name: "Plug2", initialValue: "2"}, {name: "Plug3", initialValue: "3"}]
+    var optimiseFor = "price";
+      document.addEventListener("DOMContentLoaded", function() {
+        loadDevices(devices);
+      });
+
+
+    </script>
 </html>
