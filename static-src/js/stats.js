@@ -91,10 +91,3 @@ function drawChart(element, max) {
       }
   });
 }
-
-
-document.addEventListener("DOMContentLoaded", function(event) {
-    drawChart(document.getElementById("stats-0"), 500);
-    drawChart(document.getElementById("stats-1"), 1500);
-    drawChart(document.getElementById("stats-2"), 200);
-});

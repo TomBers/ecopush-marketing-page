@@ -43,6 +43,14 @@ h5 {
   height: 28px;
 }
 
+.monitor {
+ display: block;
+ margin: auto;
+ padding-top: 20px;
+ width: 250px;
+ height: 445px;
+}
+
 html,
 body {
   margin: 0;
