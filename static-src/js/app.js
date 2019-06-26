@@ -76,6 +76,7 @@ if (mobilebtns.length && sections.length > 0) {
 }
 
 navIcon.addEventListener("click", function() {
+    document.getElementById('mobile-list').classList.toggle("show");
     document.querySelector(".mobile-list").classList.toggle("show");
 });
 
